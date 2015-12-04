@@ -19,6 +19,8 @@ def get_options():
                 help="file name for 2d data")
    p.add_option('--o-cluster', dest='fn_cluster',
                 help="file name for result of clustering")
+   p.add_option('--p-num', dest='prm_num',
+                help="parameter for the number of cluster")
    opts, args = p.parse_args()
    print "----------------------------"
    p.print_help()
@@ -35,7 +37,11 @@ fn_data2d = 'data2d.dat'
 if opts.fn_data2d:         
    fn_data2d = opts.fn_data2d
 f = open(fn_data2d,'r')
-#c1 = np.array(f.readline().split(),dtype=float)
+
+prm_num = int(2)
+if opts.prm_num:         
+   prm_num = int(opts.prm_num)
+
 c1 = []
 for line in f:
     c1.append(line.split()[0])
@@ -48,7 +54,7 @@ c1 = c1.reshape(len(c1)/2,2)
 print c1
 
 ##### KMEANS CLUSTERING
-y_pred = KMeans(n_clusters=2).fit_predict(c1)
+y_pred = KMeans(n_clusters=prm_num).fit_predict(c1)
 print y_pred
 
 ##### OUTPUT PC COORDINATES OF ALL STRUCTURES  

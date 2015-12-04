@@ -2,6 +2,7 @@
 
 python kmeansnishi.py \
    --i-data2d file_3_ext.dat \
+   --p-num 2 \
    --o-cluster cluster.dat
 
 exit
