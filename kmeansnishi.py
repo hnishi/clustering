@@ -1,5 +1,6 @@
 #!/
-# kmeansnishi.py v 1.1
+# kmeansnishi.py 
+print "kmeansnishi.py v1.1"
 
 import sys
 import numpy as np
@@ -28,7 +29,6 @@ def get_options():
    return opts, args
 
 ############ main ##############
-print "kmeansnishi.py"
 
 ##### READING SECTION
 opts, args = get_options()
