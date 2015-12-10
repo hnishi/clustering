@@ -10,8 +10,6 @@ exit
 for i in {1..2}
 do
    python prjnishi.py \
-      --i-trj coord.dat \
-      --i-ave aveq.dat \
       --i-egv e${i}.dat \
       --o-pcc c${i}.dat
 done

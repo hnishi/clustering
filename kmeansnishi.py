@@ -1,5 +1,5 @@
 #!/
-# kmeansnishi.py v 1.0
+# kmeansnishi.py v 1.1
 
 import sys
 import numpy as np
@@ -43,9 +43,11 @@ if opts.prm_num:
    prm_num = int(opts.prm_num)
 
 c1 = []
+pot = []
 for line in f:
     c1.append(line.split()[0])
     c1.append(line.split()[1])
+    pot.append(line.split()[2])
 f.close()
 
 c1 = np.array(c1,dtype=float)
@@ -63,6 +65,6 @@ if opts.fn_cluster:
    fn_cluster = opts.fn_cluster
 output = open(fn_cluster,'w')
 for i, j in enumerate(c1):
-   print >> output, j[0], j[1], y_pred[i]
+   print >> output, j[0], j[1], pot[i], y_pred[i]
 output.close()
 
