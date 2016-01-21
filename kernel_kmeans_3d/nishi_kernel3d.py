@@ -56,6 +56,7 @@ f.close()
 c1 = np.array(c1,dtype=float)
 c1 = c1.reshape(len(c1)/3,3)
 
+print "num of data:",len(c1)
 print c1
 
 ##### KMEANS CLUSTERING
